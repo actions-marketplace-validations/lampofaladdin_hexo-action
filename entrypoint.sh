@@ -8,6 +8,9 @@ echo "$INPUT_DEPLOY_KEY" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 
+ chown -R `whoami` /usr/local/lib/node_modules
+
+
 # setup deploy git account
 git config --global user.name "$INPUT_USER_NAME"
 git config --global user.email "$INPUT_USER_EMAIL"
