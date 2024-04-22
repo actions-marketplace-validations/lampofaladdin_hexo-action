@@ -17,7 +17,6 @@ git config --global user.email "$INPUT_USER_EMAIL"
 
 echo "set file permission"
 chown -R `whoami` /usr/local/lib/node_modules
-chmod -R 600 /usr/local/lib/node_modules
 
 echo "set hexo-cli"
 # install hexo env
