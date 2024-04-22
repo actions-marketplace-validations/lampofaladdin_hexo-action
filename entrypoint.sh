@@ -14,6 +14,11 @@ echo "set git"
 git config --global user.name "$INPUT_USER_NAME"
 git config --global user.email "$INPUT_USER_EMAIL"
 
+
+echo "set file permission"
+chown -R `whoami` /usr/local/lib/node_modules
+chmod -R 600 /usr/local/lib/node_modules
+
 echo "set hexo-cli"
 # install hexo env
 npm install hexo-cli -g
@@ -21,8 +26,6 @@ npm install hexo-cli -g
 echo "set hexo-cli-git"
 npm install hexo-deployer-git --save
 
-echo "set file permission"
-chown -R `whoami` /usr/local/lib/node_modules
 
 # deployment
 if [ "$INPUT_COMMIT_MSG" = "none" ]
